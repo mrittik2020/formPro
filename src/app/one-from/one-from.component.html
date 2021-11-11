@@ -1,0 +1,28 @@
+<form [formGroup]="restFrom" (ngSubmit)="onSubmit(restFrom.value)">
+
+    <section>
+      <label for="exams">Name</label>
+      <input type="text" formControlName="name"  id="exams" placeholder="Name">
+    </section>
+  
+    <section>
+      <label for="ex1">Email address</label>
+      <input type="email" formControlName="email" id="ex1" placeholder="Enter email">
+    </section>
+  
+    <section>
+      <label for="exam">Phone</label>
+      <input type="number" id="exam" formControlName="phone" placeholder="Phone">
+    </section>
+  
+    <section>
+      <label for="examdede">Image===================></label>
+      <input type="file" name="image" id="examdede" formControlName="image" (change)="fileInput($event)"  >
+    </section>
+  
+    <section>
+      <button type="submit" >Submit</button>
+      <button type="rest" >Reset</button>
+    </section>
+  
+  </form>
