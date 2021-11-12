@@ -1,0 +1,53 @@
+.main{
+    width: 100%;
+}
+.container{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    
+}
+form{ 
+    padding: 10px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color:white;
+    border-radius:10px;
+    padding-bottom: 40px;
+}
+
+.ff{
+    width: 100%;
+}
+
+form button{
+    margin-top: 10px;
+    width: 20%;
+}
+
+.button{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+}
+
+mat-radio-group{
+    margin: 15px 0;
+}
+
+.radio{
+    display: inline;
+    padding-left: 50px;
+}
+mat-radio-group mat-label{
+    font-size:17px;
+}

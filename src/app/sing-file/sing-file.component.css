@@ -1,0 +1,68 @@
+.container{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+form{ 
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:white;
+    padding: 10px;
+    padding-bottom: 40px;
+    border-radius: 10px;
+}
+
+.ff{
+    width: 100%;
+}
+
+form button{
+    margin-top: 10px;
+    width: 20%;
+}
+
+.file{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 1;
+    overflow: hidden; 
+    position: absolute;
+    z-index: -1;
+}
+
+.btnHolder{
+    max-width: 100%;
+    min-width: 200px;
+    width: auto;
+    background-color:#cf293d;
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+    border-radius: 20px;
+    padding:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:40px;
+    cursor: pointer;
+}
+.btnHolder:hover{
+    background-color:#990a1b;
+}
+.btnHolder:active{
+    transform: scale(.95);
+}
+.btnHolder svg{
+    min-width: 40px;
+    height: 1.1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}

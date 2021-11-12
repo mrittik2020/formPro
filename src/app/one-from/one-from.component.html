@@ -1,28 +1,43 @@
-<form [formGroup]="restFrom" (ngSubmit)="onSubmit(restFrom.value)">
+<div class="main">
+  <div class="container">
+    <form>
+      <mat-form-field class="ff" appearance="outline">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput placeholder="Name" required>
+      </mat-form-field>
 
-    <section>
-      <label for="exams">Name</label>
-      <input type="text" formControlName="name"  id="exams" placeholder="Name">
-    </section>
-  
-    <section>
-      <label for="ex1">Email address</label>
-      <input type="email" formControlName="email" id="ex1" placeholder="Enter email">
-    </section>
-  
-    <section>
-      <label for="exam">Phone</label>
-      <input type="number" id="exam" formControlName="phone" placeholder="Phone">
-    </section>
-  
-    <section>
-      <label for="examdede">Image===================></label>
-      <input type="file" name="image" id="examdede" formControlName="image" (change)="fileInput($event)"  >
-    </section>
-  
-    <section>
-      <button type="submit" >Submit</button>
-      <button type="rest" >Reset</button>
-    </section>
-  
-  </form>
+      <mat-form-field class="ff" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="Email" required>
+      </mat-form-field>
+
+      <mat-form-field class="ff" appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input type="tel" matInput placeholder="Phone Number" required>
+      </mat-form-field>
+
+      <!-- <mat-radio-group  appearance="outline">
+        <mat-label>Gender:</mat-label>
+        <div class="radio">
+          <mat-radio-button [checked]="true" value="M">Male</mat-radio-button>
+          <mat-radio-button value="F">Female</mat-radio-button>
+          <mat-radio-button  color="primary" value="O">Others</mat-radio-button>
+        </div>
+      </mat-radio-group> -->
+
+      <!-- <mat-radio-group aria-label="Select an option" appearance="outline">
+        <mat-label>Terms and Conditions*</mat-label>
+        <div class="radio">
+          <mat-radio-button type="radio" color="primary"  value="M">I Agree</mat-radio-button>
+          <mat-radio-button type="radio"  [checked]="true" value="F">I Disagree</mat-radio-button>
+        </div>
+      </mat-radio-group> -->
+
+      <div class="button">
+        <button type="submit" mat-raised-button color="accent">Submit</button>
+        <button  type="reset" mat-raised-button color="warn">Reset</button>
+      </div>
+    </form>
+
+  </div>
+</div>
