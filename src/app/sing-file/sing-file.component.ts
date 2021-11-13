@@ -30,14 +30,20 @@ export class SingFileComponent implements OnInit {
 
   // For Image Handelling................................................................
   public onFileSelected(event: any): void {
-    this.image = event.target["files"];    
-    let file = event.target.files[0];
-    let txtLen: number = file.name.split('').length;
-    if(txtLen > 20) {
-      this.str = file.name.slice(0, 20) + "...";
+    let numFiles = event.target.files.length
+    if(numFiles!=0){
+      this.image = event.target["files"];    
+      let file = event.target.files[0];
+      let txtLen: number = file.name.split('').length;
+      if(txtLen > 20) {
+        this.str = file.name.slice(0, 20) + "...";
+      }else{
+        this.str = file.name;
+      }
     }else{
-      this.str = file.name;
+      this.str = "Choose a file...";
     }
+    
   }
 
 

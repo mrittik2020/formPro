@@ -33,6 +33,7 @@ export class TestComponent implements OnInit {
 
 
     if (numFiles != 0) {
+
       if (numFiles > 1) {
         // console.log(numFiles + " Files Sellected");
         this.str = numFiles + " Files Selected";
@@ -58,6 +59,8 @@ export class TestComponent implements OnInit {
 
       let files = event.target.files;
       this.images=files;
+    }else{
+      this.str = "Choose a file..."
     }
   }
 

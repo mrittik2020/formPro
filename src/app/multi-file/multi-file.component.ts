@@ -48,6 +48,8 @@ export class MultiFileComponent implements OnInit {
       let files = event.target.files;
       this.images=files;
 
+    }else{
+      this.str = "Choose a file...";
     }
   }
 
