@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Post } from '../models/Post';
 import { UploadAPIService } from '../services/upload-api.service';
 
 @Component({
-  selector: 'app-multi-file',
-  templateUrl: './multi-file.component.html',
-  styleUrls: ['./multi-file.component.css']
+  selector: 'app-test',
+  templateUrl: './test.component.html',
+  styleUrls: ['./test.component.css']
 })
 
-export class MultiFileComponent implements OnInit {
+export class TestComponent implements OnInit {
 
   public str: String = "Choose a file..."
 
   public images: any = []; //list of files
 
+
+  
   restFrom = new FormGroup({
     name: new FormControl(''),
     email: new FormControl(''),
@@ -26,7 +28,6 @@ export class MultiFileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // For Image Handelling................................................................
   public onMultiFileSelected(event: any): void {
     let numFiles = event.target.files.length
     if (numFiles != 0) {
@@ -51,8 +52,8 @@ export class MultiFileComponent implements OnInit {
   }
 
 
-  // For Form Submit Data Handelling............................................................
   onSubmit(formData: Post){
+
 
     this.uploader.uploadMfile(formData, this.images).subscribe(res => {
       console.log(res);

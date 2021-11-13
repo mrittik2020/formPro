@@ -1,19 +1,19 @@
 <div class="main">
   <div class="container">
-    <form>
+    <form [formGroup]="restFrom" (ngSubmit)="onSubmit(restFrom.value)"  >
       <mat-form-field class="ff" appearance="outline">
         <mat-label>Name</mat-label>
-        <input type="text" matInput placeholder="Name" required>
+        <input type="text" matInput formControlName="name" placeholder="Name" required>
       </mat-form-field>
 
-      <mat-form-field class="ff" appearance="outline">
+      <mat-form-field class="ff"  appearance="outline">
         <mat-label>Email</mat-label>
-        <input type="email" matInput placeholder="Email" required>
+        <input type="email" formControlName="email" placeholder="Email" required matInput>
       </mat-form-field>
 
       <mat-form-field class="ff" appearance="outline">
         <mat-label>Phone</mat-label>
-        <input type="tel" matInput placeholder="Phone Number" required>
+        <input type="tel" formControlName="phone" matInput placeholder="Phone Number" required>
       </mat-form-field>
 
       <!-- <mat-radio-group  appearance="outline">
@@ -34,7 +34,7 @@
       </mat-radio-group> -->
 
       <div class="button">
-        <button type="submit" mat-raised-button color="accent">Submit</button>
+        <button type="submit" mat-raised-button color="accent" >Submit</button>
         <button  type="reset" mat-raised-button color="warn">Reset</button>
       </div>
     </form>

@@ -21,6 +21,7 @@ import {MatInputModule} from '@angular/material/input';
 import { HomeComponent } from './home/home.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MultiFileComponent,
     SingFileComponent,
     HomeComponent,
+    TestComponent,
 
   ],
   imports: [

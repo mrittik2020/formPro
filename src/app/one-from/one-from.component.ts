@@ -16,30 +16,25 @@ import { Post } from './../models/Post';
 
 export class OneFromComponent implements OnInit {
 
-  public image:any = null; //list of files
-
   restFrom = new FormGroup({
     name:new FormControl(''),
     email:new FormControl(''),
     phone:new FormControl('')
   })
   constructor(private uploader: UploadAPIService) { }
- 
-
-
+  
 
   // For Form Submit Data Handelling............................................................
   onSubmit(formData: Post){
-    console.log(this.restFrom.value["name"]);
-    console.log(this.restFrom.value["email"]);
-    console.log(this.restFrom.value["phone"]);
 
-    // this.uploader.uploadAPI(formData, this.image).subscribe(res => {
-    //   console.log(res);
-    // },
-    // error => {
-    //   console.log(error);
-    // });
+    // this.uploader.upSimpleFrom(formData)
+
+    this.uploader.upSimpleFrom(formData).subscribe(res => {
+      console.log(res);
+    },
+    error => {
+      console.log(error);
+    });
 
   }
 

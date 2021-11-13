@@ -5,34 +5,41 @@ import { HomeComponent } from './home/home.component';
 import { MultiFileComponent } from './multi-file/multi-file.component';
 import { OneFromComponent } from './one-from/one-from.component';
 import { SingFileComponent } from './sing-file/sing-file.component';
+import { TestComponent } from './test/test.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component:HomeComponent,
-    pathMatch:"full"
+    component: HomeComponent,
+    pathMatch: "full"
   },
   {
     path: 'simpleFrom',
-    component:OneFromComponent,
-    pathMatch:"full"
+    component: OneFromComponent,
+    pathMatch: "full"
   },
   {
     path: 'singleFile',
-    component:SingFileComponent,
-    pathMatch:"full"
+    component: SingFileComponent,
+    pathMatch: "full"
   },
   {
     path: 'multipleFile',
-    component:MultiFileComponent,
-    pathMatch:"full"
+    component: MultiFileComponent,
+    pathMatch: "full"
+  },
+  {
+    path: 'test',
+    component: TestComponent,
+    pathMatch: "full"
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  
-exports: [RouterModule]
+
+
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

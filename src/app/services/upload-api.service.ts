@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Post } from './../models/Post';
 
 @Injectable({
@@ -7,12 +7,39 @@ import { Post } from './../models/Post';
 })
 export class UploadAPIService {
 
-  URL = 'http://127.0.0.1:5000/upload'
-  public image: any = null; //list of files
+  URL = 'http://127.0.0.1:5000'
 
   constructor(private httpClient: HttpClient) { }
 
-  public uploadAPI(objPost: Post, image: any) {
+
+
+
+
+  //Simple Form Upload................................................................
+  public upSimpleFrom(obj: Post){
+    const { name, email, phone } = obj;
+    const fData: FormData = new FormData();
+
+    fData.append("name", name);
+    fData.append("email", email);
+    fData.append("phone", phone);
+
+    console.log(name);
+    console.log(email);
+    console.log(phone);
+
+    let HTTPreturn: Object={
+      responseType:'text'
+    }
+
+    return this.httpClient.post<Post>(this.URL+"/uploadForm",fData,HTTPreturn);
+  }
+
+
+
+
+  //Single File Upload................................................
+  public uploadSfile(objPost: Post, image: any) {
 
     const { name, email, phone } = objPost;
     const formData: FormData = new FormData();
@@ -27,9 +54,36 @@ export class UploadAPIService {
     let HTTPOptions: Object = {
       responseType: 'text'
     }
-    return this.httpClient.post<Post>(this.URL, formData, HTTPOptions);
-
-
+    return this.httpClient.post<Post>(this.URL+"/uploadSFile", formData, HTTPOptions);
   }
+
+
+     //Multiple File Upload..............................................
+     public uploadMfile(obj: Post, images:any){
+      const { name, email, phone } = obj;
+      const fData: FormData = new FormData();
+  
+      fData.append("name", name);
+      fData.append("email", email);
+      fData.append("phone", phone);
+
+      for (let img of images ) {
+        fData.append('files', img);
+      }
+
+      console.log(name);
+      console.log(email);
+      console.log(phone);
+  
+      let HTTPreturn: Object={
+        responseType:'text'
+      }
+  
+      return this.httpClient.post<Post>(this.URL+"/uploadMFile",fData,HTTPreturn);
+    }
+
+
+
+ 
 
 }
