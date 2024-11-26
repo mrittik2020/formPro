@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "formPro:build:production"
+              "buildTarget": "formPro:build:production"
             },
             "development": {
-              "browserTarget": "formPro:build:development"
+              "buildTarget": "formPro:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "formPro:build"
+            "buildTarget": "formPro:build"
           }
         },
         "test": {
