@@ -12,7 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OneFromComponent } from './one-from/one-from.component';
 
 
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ReactiveFormsModule} from '@angular/forms';
 
 
@@ -29,33 +29,24 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    OneFromComponent,
-    NavbarComponent,
-    MultiFileComponent,
-    SingFileComponent,
-    HomeComponent,
-    TestComponent,
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatInputModule,
-    MatRadioModule,
-    MatCheckboxModule,
-
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        OneFromComponent,
+        NavbarComponent,
+        MultiFileComponent,
+        SingFileComponent,
+        HomeComponent,
+        TestComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatInputModule,
+        MatRadioModule,
+        MatCheckboxModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
