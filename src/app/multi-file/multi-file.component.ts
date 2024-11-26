@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Post } from '../models/Post';
 import { UploadAPIService } from '../services/upload-api.service';
 
@@ -15,10 +15,10 @@ export class MultiFileComponent implements OnInit {
 
   public images: any = []; //list of files
 
-  restFrom = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
-    phone: new FormControl('')
+  restFrom = new UntypedFormGroup({
+    name: new UntypedFormControl(''),
+    email: new UntypedFormControl(''),
+    phone: new UntypedFormControl('')
   })
 
   constructor(private uploader: UploadAPIService) { }

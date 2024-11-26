@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder} from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, FormBuilder} from '@angular/forms';
 import { UploadAPIService } from '../services/upload-api.service';
 import { Post } from './../models/Post';
 
@@ -16,10 +16,10 @@ import { Post } from './../models/Post';
 
 export class OneFromComponent implements OnInit {
 
-  restFrom = new FormGroup({
-    name:new FormControl(''),
-    email:new FormControl(''),
-    phone:new FormControl('')
+  restFrom = new UntypedFormGroup({
+    name:new UntypedFormControl(''),
+    email:new UntypedFormControl(''),
+    phone:new UntypedFormControl('')
   })
   constructor(private uploader: UploadAPIService) { }
   
