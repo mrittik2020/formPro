@@ -4,9 +4,10 @@ import { Post } from '../models/Post';
 import { UploadAPIService } from '../services/upload-api.service';
 
 @Component({
-  selector: 'app-multi-file',
-  templateUrl: './multi-file.component.html',
-  styleUrls: ['./multi-file.component.css']
+    selector: 'app-multi-file',
+    templateUrl: './multi-file.component.html',
+    styleUrls: ['./multi-file.component.css'],
+    standalone: false
 })
 
 export class MultiFileComponent implements OnInit {

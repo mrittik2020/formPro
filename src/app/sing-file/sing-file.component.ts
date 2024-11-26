@@ -4,9 +4,10 @@ import { Post } from '../models/Post';
 import { UploadAPIService } from '../services/upload-api.service';
 
 @Component({
-  selector: 'app-sing-file',
-  templateUrl: './sing-file.component.html',
-  styleUrls: ['./sing-file.component.css']
+    selector: 'app-sing-file',
+    templateUrl: './sing-file.component.html',
+    styleUrls: ['./sing-file.component.css'],
+    standalone: false
 })
 
 

@@ -6,9 +6,10 @@ import { Post } from './../models/Post';
 
 
 @Component({
-  selector: 'app-one-from',
-  templateUrl: './one-from.component.html',
-  styleUrls: ['./one-from.component.css']
+    selector: 'app-one-from',
+    templateUrl: './one-from.component.html',
+    styleUrls: ['./one-from.component.css'],
+    standalone: false
 })
 
 
